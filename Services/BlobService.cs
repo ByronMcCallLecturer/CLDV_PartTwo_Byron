@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using System.IO;
 using System.Threading.Tasks;
 
-
 namespace SemesterTwo.Services
 {
     public class BlobService
@@ -23,5 +22,4 @@ namespace SemesterTwo.Services
             await blobClient.UploadAsync(content, true);
         }
     }
-
 }

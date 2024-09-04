@@ -1,4 +1,6 @@
 using SemesterTwo.Services;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace SemesterTwo
 {
@@ -6,12 +8,14 @@ namespace SemesterTwo
     {
         public static void Main(string[] args)
         {
+            
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            // Register your custom services
+            // Register custom services
             builder.Services.AddSingleton<BlobService>();
             builder.Services.AddSingleton<TableService>();
             builder.Services.AddSingleton<QueueService>();
@@ -23,7 +27,6 @@ namespace SemesterTwo
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -39,6 +42,9 @@ namespace SemesterTwo
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+
+
+
         }
     }
 }

@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 
-
 namespace SemesterTwo.Services
 {
     public class QueueService
@@ -21,5 +20,4 @@ namespace SemesterTwo.Services
             await queueClient.SendMessageAsync(message);
         }
     }
-
 }

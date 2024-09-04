@@ -11,7 +11,6 @@ namespace SemesterTwo.Models
         public DateTimeOffset? Timestamp { get; set; }
         public ETag ETag { get; set; }
 
-        // Custom properties
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
